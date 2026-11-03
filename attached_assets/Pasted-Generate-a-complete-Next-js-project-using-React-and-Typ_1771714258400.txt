@@ -1,0 +1,27 @@
+Generate a complete Next.js project (using React and TypeScript) for a low-cost landing page to sell a 155-page paperback book called "Aged Care Decision Guide". The site will be deployed to GitHub, hosted on Vercel with the custom domain agedcaredecisionguide.com, and use Stripe for payments as a paywall. Include a free "5 Questions to Ask Staff" resource with an email signup form. Focus on minimal dependencies and free tiers for zero monthly cost.
+
+Project Structure:
+- Use Next.js 14+ with App Router.
+- Pages: Single landing page at '/' with sections scrolling down.
+- Styles: Tailwind CSS for blue/white color scheme (primary blue: #0070f3, white backgrounds). Make it fully responsive for mobile/desktop.
+- Assets: Include a placeholder image for the book cover (blue-toned, describe it in code). Use free icons from Heroicons or similar.
+
+Landing Page Sections (use semantic HTML, smooth scrolling with IDs):
+1. Header (fixed nav): Logo "Aged Care Decision Guide", links: Home (#hero), About the Book (#benefits), Testimonials (#testimonials), FAQ (#faq), Buy Now button (links to Stripe checkout).
+2. Hero (#hero): Full-width blue gradient background. Headline: "Before You Sign: How to Make the Right Decisions and Avoid $200,000 Mistakes". Subheadline: "Independent Advice for Australian Families – Updated for 2026". Centered book mock-up image. CTAs: "Buy Now for $29.99" (Stripe button), "Download Free Sample Chapter" (email form modal).
+3. Problem Section (#problem): White background. Heading: "Aged Care Decisions Can Cost Families Hundreds of Thousands – Don't Let It Happen to You". Copy about overwhelming decisions in Australia. Placeholder infographic.
+4. Free Resource Section (#free-resource): Light blue background. Heading: "Facing a Rushed Aged Care Decision in Hospital? Ask These 5 Key Questions". Copy: "Download our FREE cheat sheet for quick clarity." Form: Email input + "Download Now" button. On submit, use a serverless API route to send the PDF (placeholder PDF content in code) via email (integrate SendGrid free tier or console.log for now).
+5. Benefits Section (#benefits): Blue background. Heading: "Inside the Guide: Practical Tools". Bullet points: Checklists, 2026 updates, case studies, etc. Carousel (use Swiper.js) for book page previews (placeholders).
+6. Testimonials Section (#testimonials): White background. Heading: "Trusted by Families and Experts". Grid/carousel of 3-4 quotes with names/photos (placeholders).
+7. Author Section (#author): Light blue. Heading: "Written by Experts". Bio for "Jane Doe" with photo placeholder.
+8. FAQ Section (#faq): White. Accordion component for 4-5 questions.
+9. Footer: Blue. Final "Buy Now" CTA, email signup form, social icons (Facebook, LinkedIn), copyright, privacy link.
+
+Integrations:
+- Stripe: Use @stripe/stripe-js and stripe npm packages. Create a /api/checkout route for serverless Stripe Checkout session (use process.env.STRIPE_SECRET_KEY). Redirect to success page after payment. Price: $29.99 AUD for the book (digital/physical placeholder).
+- Forms: For free resource and sample chapter, use Next.js API routes (/api/send-email) with Nodemailer + SendGrid (free tier). Collect email, send placeholder PDF attachment.
+- Deployment: Include .gitignore, vercel.json for custom domain. Instructions in README.md: "Push to GitHub, import to Vercel, set domain agedcaredecisionguide.com, add Stripe env vars."
+
+Dependencies: next, react, react-dom, tailwindcss, postcss, autoprefixer, @types/node, typescript, stripe, @stripe/stripe-js, swiper, nodemailer.
+
+Generate the full code: package.json, next.config.js, tailwind.config.js, app/layout.tsx, app/page.tsx, components for sections, API routes, and README with setup steps for GitHub/Vercel/Stripe.
